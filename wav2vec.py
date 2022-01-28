@@ -9,22 +9,16 @@ import torch
 import librosa
 import numpy as np
 from transformers import Wav2Vec2ForCTC, Wav2Vec2Processor
-from scipy.io import wavfile
 
 
-LANG = "joorock12/wav2vec2-large-xlsr-portuguese"
-MODEL = "joorock12/wav2vec2-large-xlsr-portuguese"
+LANG = "lgris/wav2vec2-large-xlsr-open-brazilian-portuguese-v2"
+MODEL = "lgris/wav2vec2-large-xlsr-open-brazilian-portuguese-v2"
 
 processor = Wav2Vec2Processor.from_pretrained(LANG)
 model = Wav2Vec2ForCTC.from_pretrained(MODEL)
 
 
 file_name = 'audio/audio.wav'
-
-data = wavfile.read(file_name)
-framerate = data[0]
-sounddata = data[1]
-time = np.arange(0,len(sounddata))/framerate
 
 input_audio, _ = librosa.load(file_name, sr=16000)
 
