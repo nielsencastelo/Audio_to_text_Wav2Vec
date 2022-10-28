@@ -11,8 +11,21 @@ import numpy as np
 from transformers import Wav2Vec2ForCTC, Wav2Vec2Processor
 
 
-LANG = "lgris/wav2vec2-large-xlsr-open-brazilian-portuguese-v2"
-MODEL = "lgris/wav2vec2-large-xlsr-open-brazilian-portuguese-v2"
+#LANG = "lgris/wav2vec2-large-xlsr-open-brazilian-portuguese-v2"
+#MODEL = "lgris/wav2vec2-large-xlsr-open-brazilian-portuguese-v2"
+
+
+#LANG = 'Rubens/Wav2Vec2-Large-XLSR-53-Portuguese'
+#MODEL = 'Rubens/Wav2Vec2-Large-XLSR-53-Portuguese'
+
+LANG = 'jonatasgrosman/wav2vec2-large-xlsr-53-portuguese'
+MODEL = 'jonatasgrosman/wav2vec2-large-xlsr-53-portuguese'
+
+LANG = "Edresson/wav2vec2-large-xlsr-coraa-portuguese"
+MODEL = "Edresson/wav2vec2-large-xlsr-coraa-portuguese"
+
+LANG = 'facebook/wav2vec2-large-xlsr-53-portuguese'
+MODEL = 'facebook/wav2vec2-large-xlsr-53-portuguese'
 
 processor = Wav2Vec2Processor.from_pretrained(LANG)
 model = Wav2Vec2ForCTC.from_pretrained(MODEL)
